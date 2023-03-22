@@ -3,13 +3,19 @@
 :root {
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
+  --lighter-bright-blue: hsla(245, 83%, 68%, 1);
   --very-pale-blue: hsl(225, 100%, 98%);
   --desaturated-blue: hsl(224, 23%, 55%);
   --dark-blue: hsl(223, 47%, 23%);
 
   --ff-primary: "Red Hat Display", sans-serif;
-  
-  --fs-body: 1rem;
+
+  /* base */
+  --fs-base: 1rem;
+  --fw-base: 500;
+  --lh-base-d: 1.625rem;
+  --lh-base-m: 1.5625rem;
+  --lh-base: var(--lh-base-d);
 
   /* h1 */
   --fw-h1: 900;
@@ -40,7 +46,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--very-pale-blue);
+  background-color: var(--pale-blue);
 }
 
 #background-pattern {
@@ -58,7 +64,7 @@ body {
 .card {
   max-width: 28.125rem;
   border-radius: 1.25rem;
-  box-shadow: 0px 2.5rem 2.5rem -1.25rem rgba(13, 48, 189, 0.151826);
+  box-shadow: 0px 2.5rem 2.5rem -1.25rem hsla(228, 87%, 40%, 0.151826);
   margin: 4.4375rem 1.5rem;
 }
 
@@ -67,7 +73,85 @@ body {
   padding: 2.8125rem 3rem 3rem;
   border-radius: 0 0 1.25rem 1.25rem;
 }
-.btn {
-  width: 100%;
+.text-center {
+  text-align: center;
+}
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  line-height: var(--lh-h1);
+  color: var(--dark-blue);
+}
+p {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-base);
+  line-height: var(--lh-base);
+  color: var(--desaturated-blue);
+}
+.card-description > p {
+  margin-block: 1.0625rem 20px;
 }
 
+.subscription-card {
+  border-radius: 0.6875rem;
+  padding: 1.5625rem 1.5rem;
+  background-color: var(--very-pale-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 1.25rem 2rem;
+}
+.melody-price-container {
+  display: flex;
+}
+#melody-icon {
+  margin-inline-end: 1.25rem;
+}
+.price {
+  font-size: var(--fs-base);
+}
+.plan-type {
+  font-weight: var(--fw-h1);
+  color: var(--dark-blue);
+}
+.price-change-link {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--bright-blue);
+}
+.price-change-link:hover {
+  text-decoration: none;
+  color: var(--lighter-bright-blue);
+}
+
+.btn {
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  border-radius: 0.6875rem;
+  padding: 15px 0;
+}
+
+.proceed-btn {
+  background-color: var(--bright-blue);
+  color: white;
+  margin-block-end: 1.0625rem;
+  box-shadow: 0px 1.25rem 1.25rem hsla(245, 75%, 52%, 0.190291);
+}
+.proceed-btn:hover {
+  background-color: var(--lighter-bright-blue);
+}
+.cancel-btn {
+  background-color: transparent;
+  color: var(--dark-blue);
+  font-weight: var(--fw-h1);
+}
+
+@media (max-width) {
+  .price {
+    font-size: 0.875rem;
+  }
+  .price-change-link {
+    font-size: 0.8125rem;
+  }
+}
